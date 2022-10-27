@@ -1,11 +1,11 @@
-import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 
-function Home(){
+const Home = () => {
+
     const navigate = useNavigate();
     function handleLogOut() {
         sessionStorage.setItem("userToken", '');
