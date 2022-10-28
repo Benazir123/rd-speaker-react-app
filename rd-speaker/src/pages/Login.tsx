@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../index.css'
 import { AppService } from "../services/app.service";
 import { useNavigate } from "react-router-dom";
@@ -31,6 +31,14 @@ function LoginForm(){
           // }
       })
     }
+
+    useEffect(() => {
+     appService.get('v2/speakerAppSettings').then(response => {
+        var SpeakerSettings =  response.data
+         console.log("response.data", SpeakerSettings)
+       })
+    }, []);
+
 
   return(
     <div>
